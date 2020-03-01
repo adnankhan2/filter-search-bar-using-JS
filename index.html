@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filter response</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+</head>
+<body>
+<div class="searchBar">
+    <h3>My filter search bar</h3>
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+</div>
+
+<div class="list">
+    <ul id="myUL">
+        <li><a href="#">Pakistan</a></li>
+        <li><a href="#">India</a></li>
+        <li><a href="#">china</a></li>
+        <li><a href="#">Nepal</a></li>
+        <li><a href="#">Russia</a></li>
+        <li><a href="#">Newzealand</a></li>
+        <li><a href="#">America</a></li>
+        <li><a href="#">Canada</a></li>
+        <li><a href="#">Saudi Arabia</a></li>
+        <li><a href="#">United Arab Emirates</a></li>
+        <li><a href="#">Qatar</a></li>
+        <li><a href="#">Finland</a></li>
+        <li><a href="#">Sweden</a></li>
+        <li><a href="#">Estonia</a></li>
+        <li><a href="#">Italy</a></li>
+        <li><a href="#">France</a></li>
+        <li><a href="#">United Kingdom</a></li>
+      </ul>
+</div>
+
+</ul>
+    
+    <script>
+        const myFunction =() => {
+  // Declare variables
+  var input, filter, ul, li, a, i, txtValue;
+  input = document.getElementById('myInput');
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("myUL");
+  li = ul.getElementsByTagName('li');
+
+  // Loop through all list items, and hide those who don't match the search query
+  for (i = 0; i < li.length; i++) {
+    a = li[i].getElementsByTagName("a")[0];
+    txtValue = a.textContent || a.innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none"; // hiding those who arent in searchquerry
+    }
+  }
+}
+</script>
+    </script>
+</body>
+</html>
